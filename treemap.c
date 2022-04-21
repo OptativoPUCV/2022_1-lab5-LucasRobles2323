@@ -71,7 +71,7 @@ TreeNode * minimum(TreeNode * x){
 
     while (aux != NULL)
     {
-        if(tree->lower_than(aux->pair->key, x->pair->key) == 1){
+        if(lower_than(aux->pair->key, x->pair->key) == 1){
             x = aux;
             aux = x->left;
         }
