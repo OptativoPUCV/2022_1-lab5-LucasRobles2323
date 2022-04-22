@@ -84,6 +84,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
 
     if(node->left != NULL){insertTreeMap(tree, node->left->pair->key, node->left->pair->value);}
     if(node->right != NULL){insertTreeMap(tree, node->right->pair->key, node->right->pair->value);}
+    free(node);
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
