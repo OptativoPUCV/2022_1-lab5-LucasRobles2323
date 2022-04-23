@@ -91,7 +91,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     }
     
     if (rightSon != NULL ){
-        searchTreeMap(tree, rightSon->pair->key);
+        node->pair = searchTreeMap(tree, rightSon->pair->key);
         
         parent = tree->current;
         if(tree->lower_than(rightSon->pair->key, parent->pair->key) == 1){
@@ -101,7 +101,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             aux = parent->right;
             parent->right = rightSon;
         }
-        searchTreeMap(tree, aux->pair->key);
+        node->pair = searchTreeMap(tree, aux->pair->key);
         parent = tree->current;
         if(tree->lower_than(aux->pair->key, parent->pair->key) == 1){
             parent->left = aux;
@@ -110,7 +110,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
     }
     if (leftSon != NULL){
-        searchTreeMap(tree, leftSon->pair->key);
+        node->pair = searchTreeMap(tree, leftSon->pair->key);
         
         parent = tree->current;
         if(tree->lower_than(leftSon->pair->key, parent->pair->key) == 1){
@@ -120,7 +120,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             aux = parent->right;
             parent->right = leftSon;
         }
-        searchTreeMap(tree, aux->pair->key);
+        node->pair = searchTreeMap(tree, aux->pair->key);
         parent = tree->current;
         if(tree->lower_than(aux->pair->key, parent->pair->key) == 1){
             parent->left = aux;
