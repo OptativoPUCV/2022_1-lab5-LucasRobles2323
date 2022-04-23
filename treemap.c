@@ -138,8 +138,8 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
             aux = aux->right;
         }
         else{
-            tree->current = aux;
-            return aux->pair;
+            if(is_equal(tree, aux->pair->key, key) == 1){return aux->pair;}
+            else{break;}
         }
     }
 
