@@ -306,3 +306,13 @@ Sat Apr 23 13:45:10 HSP 2022:
  tests:  20|2
 total_score: 45/70
 202b173
+Sat Apr 23 13:46:38 HSP 2022: 
+ treemap.c | 17 +----------------
+ 1 file changed, 1 insertion(+), 16 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function 'nextTreeMap':
+treemap.c:160:81: error: expected ';' before '}' token
+     if(tree->current->right != NULL){ return minimum(tree->current->right)->pair}
+                                                                                 ^
+Compilation failed
+60161f8
