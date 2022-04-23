@@ -128,3 +128,14 @@ Fri Apr 22 15:10:17 HSP 2022:
  tests:  16|4
 total_score: 30/70
 a134fa5
+Fri Apr 22 22:49:24 HSP 2022: 
+ treemap.c | 63 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 58 insertions(+), 5 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function 'removeNode':
+treemap.c:80:11: error: variable 'unUse' set but not used [-Werror=unused-but-set-variable]
+     Pair *unUse = NULL;
+           ^~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+6276430

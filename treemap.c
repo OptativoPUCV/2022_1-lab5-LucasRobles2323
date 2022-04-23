@@ -74,17 +74,70 @@ TreeNode * minimum(TreeNode * x){
 
 void removeNode(TreeMap * tree, TreeNode* node) {
     TreeNode *parent = node->parent;
-    
+    TreeNode *leftSon = node->left;
+    TreeNode *rightSon = node->right;
+    TreeNode *aux = NULL;
+    Pair *unUse = NULL;
     node->parent = NULL;
-    if(tree->lower_than(node->pair->key, parent->pair->key) == 1){
-        parent->left = NULL;
-    }else if (tree->lower_than(parent->pair->key, node->pair->key) == 1){
-        parent->left = NULL;
-    }
+    node->left = NULL;
+    node->right = NULL;
 
-    if(node->left != NULL){insertTreeMap(tree, node->left->pair->key, node->left->pair->value);}
-    if(node->right != NULL){insertTreeMap(tree, node->right->pair->key, node->right->pair->value);}
-    free(node);
+    if(leftSon == NULL && rightSon == NULL){
+        if(tree->lower_than(node->pair->key, parent->pair->key) == 1){
+            parent->left = NULL;
+        }else if (tree->lower_than(parent->pair->key, node->pair->key) == 1){
+            parent->right = NULL;
+        }
+    }
+    
+    if (rightSon != NULL){
+        unUse = searchTreeMap(tree, rightSon->pair->key); //Solo se usa search para actualizar el current
+        
+        parent = tree->current;
+        if(tree->lower_than(rightSon->pair->key, parent->pair->key) == 1){
+            aux = parent->left;
+            parent->left = rightSon;
+        }else if (tree->lower_than(parent->pair->key, rightSon->pair->key) == 1){
+            aux = parent->right;
+            parent->right = rightSon;
+        }
+        unUse = searchTreeMap(tree, aux->pair->key);
+        parent = tree->current;
+        if(tree->lower_than(aux->pair->key, parent->pair->key) == 1){
+            parent->left = aux;
+        }else if (tree->lower_than(parent->pair->key, aux->pair->key) == 1){
+            parent->right = aux;
+        }
+    }
+    if (leftSon != NULL){
+        unUse = searchTreeMap(tree, leftSon->pair->key); //Solo se usa search para actualizar el current
+        
+        parent = tree->current;
+        if(tree->lower_than(leftSon->pair->key, parent->pair->key) == 1){
+            aux = parent->left;
+            parent->left = leftSon;
+        }else if (tree->lower_than(parent->pair->key, leftSon->pair->key) == 1){
+            aux = parent->right;
+            parent->right = leftSon;
+        }
+        unUse = searchTreeMap(tree, aux->pair->key);
+        parent = tree->current;
+        if(tree->lower_than(aux->pair->key, parent->pair->key) == 1){
+            parent->left = aux;
+        }else if (tree->lower_than(parent->pair->key, aux->pair->key) == 1){
+            parent->right = aux;
+        }
+    }
+    
+    /*parent = NULL;
+    leftSon = NULL;
+    rightSon = NULL;
+    aux = NULL;
+    unUse = NULL;
+    node->parent = NULL;
+    node->left = NULL;
+    node->right = NULL;
+    free(node);*/
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
