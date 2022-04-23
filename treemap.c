@@ -163,5 +163,18 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-    return NULL;
+    TreeNode *aux = tree->current->right;
+    if(aux->right != NULL){
+        aux = minimum(tree->current->right);
+    }
+    else if (aux->right == NULL)
+    {
+        while (tree->current > aux->parent)
+        {
+            aux = aux->parent;
+        }
+    }
+
+    tree->current = aux;
+    return tree->current;
 }
