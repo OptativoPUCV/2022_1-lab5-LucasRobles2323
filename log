@@ -256,3 +256,26 @@ Sat Apr 23 00:08:05 HSP 2022:
  1 file changed, 1 insertion(+)
  tests:  21|0
 0381725
+Sat Apr 23 13:37:20 HSP 2022: 
+ treemap.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function 'removeNode':
+treemap.c:98:39: error: passing argument 1 of 'remove' from incompatible pointer type [-Werror=incompatible-pointer-types]
+         if(min->right != NULL){remove(tree, min);}
+                                       ^~~~
+In file included from test.c:1:0:
+c:\mingw\include\stdio.h:270:41: note: expected 'const char *' but argument is of type 'TreeMap * {aka struct TreeMap *}'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int    remove (const char *);
+                                         ^~~~~~
+In file included from test.c:4:0:
+treemap.c:98:32: error: too many arguments to function 'remove'
+         if(min->right != NULL){remove(tree, min);}
+                                ^~~~~~
+In file included from test.c:1:0:
+c:\mingw\include\stdio.h:270:41: note: declared here
+ _CRTIMP __cdecl __MINGW_NOTHROW  int    remove (const char *);
+                                         ^~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+8b2c8cd
