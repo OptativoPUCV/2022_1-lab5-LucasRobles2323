@@ -158,5 +158,15 @@ Pair * firstTreeMap(TreeMap * tree) {
 
 Pair * nextTreeMap(TreeMap * tree) {
     if(tree->current->right != NULL){ return minimum(tree->current->right)->pair;}
+    tree->current->pair->key += 1;
+    if (searchTreeMap(tree, tree->current->pair->key) == NULL)
+    {
+        return tree->current->pair;
+    }
+    else{
+        return searchTreeMap(tree, tree->current->pair->key);
+    }
+    
+
     return NULL;
 }
