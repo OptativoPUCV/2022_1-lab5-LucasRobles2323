@@ -90,8 +90,8 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         return;
     }
     
-    if (rightSon != NULL){
-        Pair *unUse = searchTreeMap(tree, rightSon->pair->key); //Solo se usa search para actualizar el current
+    if (rightSon != NULL ){
+        searchTreeMap(tree, rightSon->pair->key) == NULL)
         
         parent = tree->current;
         if(tree->lower_than(rightSon->pair->key, parent->pair->key) == 1){
@@ -101,7 +101,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             aux = parent->right;
             parent->right = rightSon;
         }
-        unUse = searchTreeMap(tree, aux->pair->key);
+        searchTreeMap(tree, aux->pair->key);
         parent = tree->current;
         if(tree->lower_than(aux->pair->key, parent->pair->key) == 1){
             parent->left = aux;
@@ -110,7 +110,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
     }
     if (leftSon != NULL){
-        Pair *unUse = searchTreeMap(tree, leftSon->pair->key); //Solo se usa search para actualizar el current
+        searchTreeMap(tree, leftSon->pair->key); //Solo se usa search para actualizar el current
         
         parent = tree->current;
         if(tree->lower_than(leftSon->pair->key, parent->pair->key) == 1){
@@ -120,7 +120,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             aux = parent->right;
             parent->right = leftSon;
         }
-        unUse = searchTreeMap(tree, aux->pair->key);
+        searchTreeMap(tree, aux->pair->key);
         parent = tree->current;
         if(tree->lower_than(aux->pair->key, parent->pair->key) == 1){
             parent->left = aux;
