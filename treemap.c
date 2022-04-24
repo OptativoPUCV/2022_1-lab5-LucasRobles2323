@@ -191,6 +191,6 @@ Pair * nextTreeMap(TreeMap * tree) {
         
         tree->current = tree->current->parent;
     }
-
+    printf("\n%d = %d\n", *(int*)tree->current->pair->key , *(int*)tree->current->parent->pair->key);
     return tree->current->pair;
 }
