@@ -571,3 +571,9 @@ treemap.c:196:16: error: initialization makes pointer from integer without a cas
 cc1.exe: all warnings being treated as errors
 Compilation failed
 a63f8c9
+Sun Apr 24 17:47:18 HSP 2022: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  22|2
+total_score: 45/70
+4219f97
