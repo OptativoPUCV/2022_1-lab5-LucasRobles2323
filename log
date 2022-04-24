@@ -639,3 +639,17 @@ treemap.c:151:8: note: expected 'void *' but argument is of type 'int'
 cc1.exe: all warnings being treated as errors
 Compilation failed
 fb7ccf7
+Sun Apr 24 17:53:24 HSP 2022: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+treemap.c: In function 'nextTreeMap':
+treemap.c:198:29: error: passing argument 2 of 'upperBound' makes pointer from integer without a cast [-Werror=int-conversion]
+     return upperBound(tree, k+1);
+                             ^
+treemap.c:151:8: note: expected 'void *' but argument is of type 'int'
+ Pair * upperBound(TreeMap * tree, void* key) {
+        ^~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+35f0069
