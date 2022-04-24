@@ -170,7 +170,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-
+    printf("\n%d = %d\n", *(int*)tree->current->pair->key , *(int*)tree->current->parent->pair->key);
     if (tree->current == NULL)
     {return NULL;}
     
@@ -183,7 +183,7 @@ Pair * nextTreeMap(TreeMap * tree) {
 
     while(!tree->lower_than(aux->pair->key, tree->current->parent->pair->key))
     {
-        printf("\n%d = %d\n", *(int*)tree->current->pair->key , *(int*)tree->current->parent->pair->key);
+        
         tree->current = tree->current->parent;
     }
 
