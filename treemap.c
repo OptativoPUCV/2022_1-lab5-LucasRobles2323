@@ -181,8 +181,9 @@ Pair * nextTreeMap(TreeMap * tree) {
             return NULL;
         }
     }
+    Pair *p = upperBound(tree, tree->current->pair->key+1);
     
-    if(tree->lower_than(tree->current->pair->key, tree->current->parent->pair->key) == 1){
+    /*if(tree->lower_than(tree->current->pair->key, tree->current->parent->pair->key) == 1){
         tree->current = tree->current->parent;
     }
     else{
@@ -192,5 +193,5 @@ Pair * nextTreeMap(TreeMap * tree) {
         }
         tree->current = tree->current->parent->parent;
     }
-    return tree->current->pair;
+    return tree->current->pair;*/
 }

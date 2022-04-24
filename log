@@ -693,3 +693,17 @@ Sun Apr 24 18:22:26 HSP 2022:
  tests:  29|0
 total_score: 70/70
 7e76ebb
+Sun Apr 24 18:24:47 HSP 2022: 
+ treemap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function 'nextTreeMap':
+treemap.c:184:11: error: unused variable 'p' [-Werror=unused-variable]
+     Pair *p = upperBound(tree, tree->current->pair->key+1);
+           ^
+treemap.c:197:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+e053f4b
