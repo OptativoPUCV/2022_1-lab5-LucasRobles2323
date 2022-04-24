@@ -176,10 +176,14 @@ Pair * nextTreeMap(TreeMap * tree) {
     if(tree->current->right != NULL)
     {return minimum(tree->current->right)->pair;}
     else{
+        printf("\nEntro\n");
         if(tree->current->parent == NULL){return NULL;}
     }
+
     TreeNode* aux = tree->current;
+    
     printf("\n%d = %d\n", *(int*)tree->current->pair->key , *(int*)tree->current->parent->pair->key);
+    
     while(!tree->lower_than(aux->pair->key, tree->current->parent->pair->key))
     {
         
