@@ -76,10 +76,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     TreeNode *parent = node->parent;
     TreeNode *leftSon = node->left;
     TreeNode *rightSon = node->right;
-    /*node->left = NULL;
-    node->pair = NULL;
-    node->right = NULL;
-    node->parent = NULL;*/
+    
 
     if(leftSon == NULL && rightSon == NULL){
         if(tree->lower_than(node->pair->key, parent->pair->key) == 1)
@@ -90,6 +87,10 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         {
             parent->right = NULL;
         }
+        node->left = NULL;
+        node->pair = NULL;
+        node->right = NULL;
+        node->parent = NULL;
     }
     else if (leftSon != NULL && rightSon != NULL)
     {
@@ -179,10 +180,12 @@ Pair * nextTreeMap(TreeMap * tree) {
         return tree->current->pair;
     }
     else{
-        if(tree->current->parent == tree->root){return NULL;}
+        if(tree->current->parent == tree->root){
+            tree->current = NULL;
+            return NULL;
+        }
     }
     
-    printf("\n%d = %d\n", *(int*)tree->current->pair->key , *(int*)tree->current->parent->pair->key);
     if(tree->lower_than(tree->current->pair->key, tree->current->parent->pair->key) == 1){
         tree->current = tree->current->parent;
     }
@@ -193,8 +196,5 @@ Pair * nextTreeMap(TreeMap * tree) {
         }
         tree->current = tree->current->parent->parent;
     }
-    printf("\n%d = ", *(int*)tree->current->pair->key);
-    if(tree->current->parent != NULL){printf("%d\n", *(int*)tree->current->parent->pair->key);}
-    else{printf("NULL\n");}
     return tree->current->pair;
 }
