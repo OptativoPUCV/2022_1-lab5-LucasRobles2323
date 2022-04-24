@@ -174,7 +174,10 @@ Pair * nextTreeMap(TreeMap * tree) {
     {return NULL;}
     
     if(tree->current->right != NULL)
-    {return minimum(tree->current->right)->pair;}
+    {
+        printf("entro");
+        return minimum(tree->current->right)->pair;
+    }
     else{
         if(tree->current->parent == tree->root){return NULL;}
     }
