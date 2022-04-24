@@ -181,8 +181,6 @@ Pair * nextTreeMap(TreeMap * tree) {
     else{
         if(tree->current->parent == tree->root){return NULL;}
     }
-
-    TreeNode* aux = tree->current;
     
     printf("\n%d = %d\n", *(int*)tree->current->pair->key , *(int*)tree->current->parent->pair->key);
     
