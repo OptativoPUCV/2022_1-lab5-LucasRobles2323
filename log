@@ -540,3 +540,9 @@ Sun Apr 24 14:22:14 HSP 2022:
  tests:  29|0
 total_score: 70/70
 7b4fc71
+Sun Apr 24 16:52:37 HSP 2022: 
+ treemap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+ tests:  29|0
+total_score: 70/70
+ee657af
