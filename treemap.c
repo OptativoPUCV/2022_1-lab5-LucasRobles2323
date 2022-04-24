@@ -193,7 +193,6 @@ Pair * nextTreeMap(TreeMap * tree) {
         tree->current = tree->current->parent->parent;
     }
     return tree->current->pair;*/
-    int *key = tree->current->pair->key;
-    *key += 1;
+    int key = (int*)tree->current->pair->key;
     return upperBound(tree, key);
 }
