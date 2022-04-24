@@ -681,3 +681,9 @@ treemap.c:179:15: error: assignment from incompatible pointer type [-Werror=inco
 cc1.exe: all warnings being treated as errors
 Compilation failed
 8094621
+Sun Apr 24 18:21:40 HSP 2022: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  22|0
+total_score: 45/70
+520ebe0

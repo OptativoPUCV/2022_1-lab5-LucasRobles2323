@@ -176,8 +176,8 @@ Pair * nextTreeMap(TreeMap * tree) {
             return NULL;}
         else{
             tree->current = tree->current->right;
-            p = minimum(tree->current);
-            p = searchTreeMap(tree, p->key);
+            tree->current = minimum(tree->current);
+            p = searchTreeMap(tree, tree->current->pair->key);
             return p;
         }
     }
