@@ -156,9 +156,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
         }
         else{
             if(tree->current->parent != NULL){tree->current = tree->current->parent;}
-            else{
-                tree->current = tree->current->right;
-            }
+            else{return NULL;}
             return tree->current->pair;
         }
     }
