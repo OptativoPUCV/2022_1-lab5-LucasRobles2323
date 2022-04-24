@@ -169,23 +169,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 Pair * nextTreeMap(TreeMap * tree) {
     if (tree->current == NULL)
     {return NULL;}
-    Pair *p = NULL;
-    if(tree->current == tree->root){
-        if(tree->current->right == NULL){
-            tree->current = NULL;
-            return NULL;}
-        else{
-            tree->current = tree->current->right;
-            tree->current = minimum(tree->current);
-            p = searchTreeMap(tree, tree->current->pair->key);
-            return p;
-        }
-    }
 
-    p = upperBound(tree, tree->current->pair->key + 1);
-    p = searchTreeMap(tree, p->key);
-    return p;
-    /*
     if(tree->current->right != NULL)
     {
         tree->current = minimum(tree->current->right);
@@ -208,5 +192,5 @@ Pair * nextTreeMap(TreeMap * tree) {
         }
         tree->current = tree->current->parent->parent;
     }
-    return tree->current->pair;*/
+    return tree->current->pair;
 }
