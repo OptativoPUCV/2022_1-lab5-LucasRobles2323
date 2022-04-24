@@ -616,3 +616,9 @@ treemap.c:197:5: error: value computed is not used [-Werror=unused-value]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 6582428
+Sun Apr 24 17:50:08 HSP 2022: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  22|2
+total_score: 45/70
+c5c2a75

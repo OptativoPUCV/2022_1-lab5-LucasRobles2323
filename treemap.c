@@ -194,7 +194,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     }
     return tree->current->pair;*/
     int *key = (int*)tree->current->pair->key;
-    *key ++;
+    (*key) = (*key)+1;
     key = (void*)key;
     return upperBound(tree, key);
 }
