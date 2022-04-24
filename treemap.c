@@ -170,7 +170,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     if (tree->current == NULL)
     {return NULL;}
     
-    /*if(tree->current->right != NULL)
+    if(tree->current->right != NULL)
     {
         tree->current = minimum(tree->current->right);
         return tree->current->pair;
@@ -192,9 +192,5 @@ Pair * nextTreeMap(TreeMap * tree) {
         }
         tree->current = tree->current->parent->parent;
     }
-    return tree->current->pair;*/
-    Pair *p = tree->current->pair;
-    int k = *(int*)p->key;
-    k = k + 1;
-    return upperBound(tree, &k);
+    return tree->current->pair;
 }
