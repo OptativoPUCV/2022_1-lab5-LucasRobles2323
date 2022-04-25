@@ -719,3 +719,14 @@ Sun Apr 24 18:25:29 HSP 2022:
  tests:  29|0
 total_score: 70/70
 7259a0f
+Sun Apr 24 23:05:14 HSP 2022: 
+ treemap.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+treemap.c: In function 'upperBound':
+treemap.c:163:32: error: return from incompatible pointer type [-Werror=incompatible-pointer-types]
+                     return tree->current;
+                            ~~~~^~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+ea870b7
